@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+// app.component.scss
+
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$background-color: #ecf0f1;
+$text-color: #2c3e50;
+$font-family: 'Helvetica Neue', Arial, sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global styles
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+  font-family: $font-family;
+  color: $text-color;
+}
+
+// Header
+.header {
+  @include flex-center;
+  background-color: $primary-color;
+  color: white;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Navigation
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: $secondary-color;
+  padding: 10px 0;
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+// Content
+.content {
+  padding: 20px;
+}
+
+// Post
+.post {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  .post-header {
+    display: flex;
+    align-items: center;
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .username {
+      font-weight: bold;
+    }
+  }
+  .post-content {
+    margin-top: 10px;
+  }
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    .actions {
+      display: flex;
+      .action {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  @include flex-center;
+  background-color: $primary-color;
+  color: white;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
